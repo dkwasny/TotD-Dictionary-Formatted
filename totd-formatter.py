@@ -30,8 +30,18 @@ with open(args.input_file, "r") as input_file:
 # replaced with a space to preserve spacing.
 # We then normalize the spacing with a final expression.
 
-# Remove all newlines, tabs, doublequotes and underscores.
-formatted_data = re.sub("[\n\t\"_]", " ", input_data)
+# Remove all non alphanumeric characters except for things that have special rules.
+# This includes...
+# Periods
+# Question Marks
+# Exclamation Points
+# Single Quotes
+# Hyphens 
+formatted_data = re.sub("[^\w.?!'\-]", " ", input_data)
+
+# Remove all underscores.
+# Underscores are considered alphanumeric by Python...but I don't want em.
+formatted_data = re.sub("_", " ", formatted_data)
 
 # Remove any repeated hyphen sequences.
 # This will keep hyphenated words like "low-budget".
@@ -71,11 +81,11 @@ period_pattern = re.compile(
 formatted_data = period_pattern.sub(".\n", formatted_data)
 
 min_characters = int(args.min_characters)
-output_data = ""
+unique_lines = set()
 for line in formatted_data.splitlines():
     stripped_line = line.strip()
     line_length = len(stripped_line)
     if line_length >= min_characters and line_length <= 50:
-        output_data += stripped_line + "\n"
+        unique_lines.add(stripped_line)
 
-print output_data
+print "\n".join(unique_lines)

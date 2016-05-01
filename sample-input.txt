@@ -11,4 +11,6 @@ I work for N.A.T.O and N.A.S.A.
 This ends with ms. when i use the word seams. Another sentence has started.
 This ends with ms. Another sentence has started.
 David's house is next to Marcus' house.
-Can't fight against the youth!I am a quoted string 'I am an inner quoted string'"
+Can't fight against the youth!I am a quoted string 'I am an inner quoted string'."
+There is a hyphenated-word here.
+This line has an...ellipsis.
