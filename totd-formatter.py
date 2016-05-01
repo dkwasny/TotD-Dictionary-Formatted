@@ -63,7 +63,7 @@ def process_file(file_name, min_characters):
     #
     # Sentences that end with honorifics will not be matched correctly. :(
     period_pattern = re.compile(
-        "(?<!\smr)(?<!\smrs)(?<!\sms)(?<!\sdr)[.]\s+",
+        "(?<!\smr)(?<!\smrs)(?<!\sms)(?<!\sdr)(?<!\sst)[.]\s+",
         re.IGNORECASE
     )
     formatted_data = period_pattern.sub(".\n", formatted_data)
