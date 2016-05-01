@@ -30,7 +30,7 @@ Using the ">>" operator will append to the end of the output file.<br/>
 See the [Microsoft Documentation](https://www.microsoft.com/resources/documentation/windows/xp/all/proddocs/en-us/redirection.mspx?mfr=true) for more info on redirects.
 
 Passing in a file as the INPUT_PATH will only process that single file.<br/>
-Passing in a directory will recursively process every file under that directory (so please do NOT pass in C:\).<br/>
+Passing in a directory will recursively process every file under that directory (so please do NOT pass in C:).<br/>
 Only files ending with "txt" will be processed.
 
 You should then be able to load the file into the workshop tool.<br/>
